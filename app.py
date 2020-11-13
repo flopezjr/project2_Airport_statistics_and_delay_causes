@@ -11,7 +11,7 @@ import psycopg2
 app = Flask(__name__)
 
 
-con = psycopg2.connect(database="routes_db", user="postgres", password="zvtP3Mg7rPac2Bee", host="104.154.50.101", port="5432")
+con = psycopg2.connect(database="routes_db", user="postgres", password="", host="", port="")
 cursor = con.cursor()
 
 @app.route("/flights_delay20132018", methods=['post', 'get'])
