@@ -1,0 +1,22 @@
+h1{
+    color:white;
+    font-size: 46px;
+    
+}
+/* Title Class  */
+.title{
+    color: #0BADA6;  
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bolder; 
+    padding-top: 25px; 
+}
+
+/*body{
+    background:rgb(245, 246, 247);
+}*/
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
