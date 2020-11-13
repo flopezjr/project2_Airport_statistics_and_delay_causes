@@ -1,0 +1,56 @@
+{% extends 'test.html' %}
+{% block title %}Flights Comparison Analysis{% endblock %}
+
+{% block content %}
+<h2>Comparison Analysis- Causes of Delay</h2>
+<hr>
+<div class="container">
+    <div class="row">
+      <div>
+        <!-- Left box  -->
+        <div class="box">
+          <!--<h3 class="title">Comparison:</h3>-->
+          <hr>
+          <!--<p>Click any plot to get an in-depth analysis.</p>-->
+          <div class="container" style="padding-bottom: 40px;">
+            <div class="row">
+              <div class="col-lg-6" style="padding: 30px;">
+                <div class="title" style="color:mediumblue; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Carrier delay</div>
+                <a href="#">
+                  <img class="panel" src="Resources/assets/images/Fig1.png" alt="Carrier delay Image">
+                </a>
+              </div>
+              <div class="col-lg-6" style="padding: 30px; color:mediumblue; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif">
+                <div class="title">Weather delay</div>
+                <a href="#">
+                  <img class="panel" src="Resources/assets/images/Fig2.png" alt="Weather delay">
+                </a>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-6" style="padding: 30px;color: mediumblue;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                <div class="title">Security delay</div>
+                <a href="#">
+                  <img class="panel" src="Resources/assets/images/Fig3.png" alt="Security delay">
+                </a>
+
+              </div>
+              <div class="col-lg-6" style="padding: 30px; color: mediumblue;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                <div class="title">Late aircraft delay</div>
+                <a href="#">
+                  <img class="panel" src="Resources/assets/images/Fig4.png" alt="Late aircraft delay">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p style="background-color:mintcream; width: 100%; font-family:Georgia, 'Times New Roman', Times, serif;">What is the possible cause of cancellation or delays within the airline's control and what is the most extreme factor that causes the delay of flights? • 
+           How does the flight delay percentage change over time?</p>
+        <p style ="font-weight: bold;" > Observation:</p>
+      </div>
+    </div>
+  </div>
+    
+{% endblock %}
+    
