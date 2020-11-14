@@ -8,7 +8,7 @@ Welcome to the proj2 wiki!
 
 •	Lead Developer - Fellipe Lopez, Tyler Pohl
 
-•	Frontend Developer - Priyanka Garg , Maria Alzaga
+•	Frontend Developer - Priyanka Garg 
 
 •	Backend Developer - Maria Alzaga, Tyler Pohl, Fellipe Lopez, Priyanka Garg and Kasmira Madina
 
