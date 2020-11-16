@@ -31,12 +31,12 @@ def test():
    # return jsonify(result)
 
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://postgres:zvtP3Mg7rPac2Bee@104.154.50.101:5432/routes_db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://postgres:/routes_db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
-engine = create_engine("postgres://postgres:zvtP3Mg7rPac2Bee@104.154.50.101:5432/routes_db")
+engine = create_engine("postgres://postgres:/routes_db")
 Base = automap_base()
 Base.prepare(db.engine, reflect=True)
 conn = engine.connect()
