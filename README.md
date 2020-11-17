@@ -1,7 +1,8 @@
 # project2_Airport_statistics_and_delay_causes
 
 Welcome to the proj2 wiki!
-
+![](https://github.com/Pg-git27/project2---Airport-statistics-and-delay-causes/blob/main/static/images/delayimage.jpg)
+***
 **Team Members**
 
 •	Project Manager - Fellipe Lopez, Tyler Pohl
