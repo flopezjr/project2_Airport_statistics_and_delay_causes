@@ -7,7 +7,7 @@ Welcome to the proj2 wiki!
 ***
 **Team Members**
 
-•	Project Manager - Fellipe Lopez, Tyler Pohl
+•	Project Manager - Fellipe Lopez
 
 •	Lead Developer - Fellipe Lopez, Tyler Pohl
 
