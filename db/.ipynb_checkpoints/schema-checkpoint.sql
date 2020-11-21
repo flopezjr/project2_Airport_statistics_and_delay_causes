@@ -2,12 +2,12 @@
 Add flight table
 -- create flights_metadata table
 CREATE TABLE flights_metadata (
-    blank varchar(6) PRIMARY KEY,
+    uid varchar(6) PRIMARY KEY,
     flight_date date,
     flight_year year,
     carrier varchar(5),
     carrier_name varchar(45),
-    airport varchar(5),
+    locationID varchar(5),
     airport_name varchar(60),
     arr_flights int,
     arr_del15 int,
