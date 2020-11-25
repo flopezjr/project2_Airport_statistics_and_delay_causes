@@ -30,7 +30,7 @@ The overall goal of this project is to investigate the general basis of flight d
 Weather delays are rather rare and are not primary reasons for flights to be delayed.
 
 **Datasource**:
-The dataset pertaining to flight delays is downloaded from the Bureau of Transportation Statistics (BTS), Airline Service Quality Performance 234 which stores, analyzes and maintains the transportation data.https://www.transtats.bts.gov/OT_Delay/ot_delaycause1.asp?display=download&pn=0&month=&year=
+The dataset pertaining to flight delays is downloaded from the Bureau of Transportation Statistics (BTS), Airline Service Quality Performance 234 which stores, analyzes and maintains the transportation data https://www.transtats.bts.gov/OT_Delay/OT_DelayCause1.asp?pn=1
 The dataset consists of information about 23 carriers and 373 airports from year 2013-2018. For the exact geo locations for each airport, we used the dataset airport_codes locations.
 
 **Questions (Measures of Airline statistics and delay causes):**
