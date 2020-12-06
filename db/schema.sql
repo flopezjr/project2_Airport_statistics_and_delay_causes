@@ -3,8 +3,8 @@ Add flight table
 -- create flights_metadata table
 CREATE TABLE airport_delays (
     uid varchar(6),
-    flight_year date,
-    flight_month date,
+    flight_year integer,
+    flight_month integer,
     carrier varchar(5),
     carrier_name varchar(45),
     locationID varchar(5) PRIMARY KEY,
