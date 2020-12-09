@@ -50,12 +50,11 @@ def index():
     return render_template("test_copy.html")
 
 
-# @app.route("/display")
-# def display():
-#    results = session.query(flights_metadata).filter_by(flights_metadata.year == '2013').all()
-#    #results = session.query(flights_metadata).all()
-#    year_list = results['year'].unique()
-#    return jsonify(year_list.tolist())
+@app.route("/display")
+def display():
+   result = cursor.fetchall()
+   #results = session.query(flights_metadata).all()
+   return jsonify(result)
 
 
 @app.route("/routes")
