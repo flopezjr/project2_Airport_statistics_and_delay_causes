@@ -1,0 +1,47 @@
+{% extends 'test.html' %}
+{% block title %}showdata{% endblock %}
+
+{% block content %}
+
+<h1>showdata</h1>
+        <hr>
+    <!--<div class="container">
+    </div>-->
+    <div class="container">
+        <table>
+            <tr>
+                <th colspan="4">Flights_delay dashboard</th>
+            </tr>
+            <tr>
+                <th>Avg. Arrival Delay</th>
+                <th>Airlines</th>
+            </tr>
+        </table>
+    </div>
+    <div>
+        
+        {% for row in data %}
+        <table border="1">
+            <tr>
+                <td >
+                    {{ row[0] }}
+                </td>
+                <td>
+                    {{ row[1] }}
+                </td>
+            </tr>
+        </table>
+        <!--<p>{{ row[0] }}</p>
+        <p>{{ row[1] }}</p>
+        <p>{{ row[2] }}</p>-->
+        {% endfor %}
+
+
+    </div>
+    <!--{% for data in mydata %}
+        <li>{{data.year}}</li>
+    {% endfor %}-->
+
+
+{% endblock %}
+    
