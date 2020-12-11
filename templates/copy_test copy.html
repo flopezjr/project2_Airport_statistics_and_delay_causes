@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Airline statistics and delay causes</title>
+</head>
+<body style="background-color: rgb(240, 231, 231)">
+    
+    <nav class="navbar navbar-light" style="background-color: #040c11;">
+        <!--<div class="container">-->
+            <div class="navbar-header">
+                <a class="navbar-brand logo" href="{{ url_for('index')}}"> 
+                <span class="nav-color">Airline statistics and delay causes</span></a>
+            </div>
+            <div class="nav navbar-nav navbar-right">
+                <li><a href="{{ url_for('index')}}"> Home</a></li>
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Visuals<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ url_for('traffic')}}">Airport Traffic</a></li>
+                        <li><a href="{{ url_for('performance')}}">Performance</a></li>
+                        <li><a href="{{ url_for('visuals')}}">Cause of Cancellation</a></li>
+                        
+                    </ul>
+                </li>
+                <li><a href="{{ url_for('routes')}}"> Routes</a></li>
+                <li><a href="{{ url_for('visuals')}}"> Comparison</a></li>
+                <li><a href = "{{ url_for('team')}}">Team</a></li>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;                                        
+            <!--</div>-->
+        <!--</div>-->     
+    </nav>
+    {% block content %}
+    {% endblock %}
+   <!--<div class = "container">     -->       
+        <!--<div class="panel panel-default">-->
+            <!--<div class="panel-body">       
+                    
+            
+            </div>-->
+               
+        <!--</div>-->
+                
+   <!--/div>-->
+</body>
+</html>
