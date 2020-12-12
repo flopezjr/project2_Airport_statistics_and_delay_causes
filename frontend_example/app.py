@@ -9,6 +9,10 @@ import plotly.express as px
 
 app = Flask(__name__)
 
+def final_data():
+    metadata = pd.read_csv("db/final_topairports_metadata.csv")
+    return metadata
+
 def load_data():
     yearly_grouped = pd.read_csv("db/yearly_group.csv")
     return yearly_grouped
@@ -28,13 +32,14 @@ def create_plot_express():
         lat="Longitude",
         lon="Latitude",
         animation_frame="flight_year",
-        color="arr_flights",
-        size="arr_flights",
+        color="arr_del15",
+        size="arr_del15",
         scope="usa",
-        size_max=50,
         hover_name="airport",
+        size_max=50,
         color_continuous_scale=px.colors.sequential.Bluered,
-        labels={"arr_flights": "Delayed Flights", "flight_year": "Year"},
+        labels={"arr_del15": "Delayed Flights", "flight_year": "Year"},
+        height=700,
     )
     
     fig1.update_geos(lataxis_showgrid=True, lonaxis_showgrid=True)
@@ -49,13 +54,13 @@ def airport_plot():
         lat="Longitude",
         lon="Latitude",
         color="airport",
-        size="arr_flights",
+        size="arr_del15",
         scope="usa",
         hover_name="airport",
         size_max=50,
         color_continuous_scale=px.colors.sequential.Bluered,
-        labels={"airport": "Airports", "arr_flights": "Delayed Flights"},
-        
+        labels={"airport": "Airports", "arr_del15": "Delayed Flights"},
+        height=700,     
     )
 
     fig2.add_trace(
@@ -94,26 +99,25 @@ def year_carrier_plot():
     data = year_carrier_data()
     fig3 = px.scatter(
         data,
-        x="arr_flights",
+        x="arr_del15",
         y="arr_delay",
         animation_frame="flight_year",
         animation_group="airport",
         color="carrier",
-        size="carrier_ct",
+        size="arr_flights",
         hover_name="airport",
         size_max=30,
         labels={
             "carrier": "Carrier",
             "flight_year": "Flight Year",
             "airport": "Airport",
-            "arr_flights": "Number of Delayed Flights",
+            "arr_del15": "Delayed Flights",
             "arr_delay": "Delay Time (Hours)",
             "carrier_ct": "Air Carrier Delay",
+            "arr_flight": "Total Flights",
         },
         title="Time Delayed (Hours) by Carrier and Airport (2013 - 2017)",
         height=700,
-        range_x=[-1000, 80000],
-        range_y=[-1000, 20000],
     )
 
     return json.dumps(fig3, cls=plotly.utils.PlotlyJSONEncoder)
@@ -123,20 +127,43 @@ def total_delay_bar():
     fig4 = px.bar(
         data,
         x="airport",
-        y="arr_flights",
+        y="arr_del15",
         labels={
             "carrier": "Carrier",
             "flight_year": "Flight Year",
             "airport": "Airport",
-            "arr_flights": "Num. of Delayed Flights",
+            "arr_del15": "Num. of Delayed Flights",
             "arr_delay": "Delay Time (Hours)",
             "carrier_ct": "Air Carrier Delay",
         },
         title="Total Delayed Flight by Airport (2013 - 2018)",
-        text="arr_flights",
+        text="arr_del15",
 )   
     fig4["layout"].pop("updatemenus")
     return json.dumps(fig4, cls=plotly.utils.PlotlyJSONEncoder)
+
+def carrier_plot():
+    data = final_data()
+    fig5 = px.bar(
+    data.groupby("carrier", as_index=False)
+    .sum()
+    .sort_values(by="arr_flights", ascending=False),
+    x="carrier",
+    y="arr_flights",
+    labels={
+        "carrier": "Carrier",
+        "flight_year": "Flight Year",
+        "airport": "Airport",
+        "arr_flights": "Num. of Delayed Flights",
+        "arr_delay": "Delay Time (Hours)",
+        "carrier_ct": "Air Carrier Delay",
+    },
+    title="Total Delayed Flight by Airport (2013 - 2018)",
+    text="arr_flights",
+)
+
+    return json.dumps(fig5, cls=plotly.utils.PlotlyJSONEncoder)
+
 
 
 @app.route("/")
