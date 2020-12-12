@@ -17,7 +17,7 @@ https://p2test-airline.herokuapp.com/
 
 •	Backend Developer - Maria Alzaga, Tyler Pohl, Felipe Lopez and Kasmira Madina
 
-•	Data Engineer/Data Modeler - Felipe Lopez, Maria Alzaga
+•	Data Engineer/Data Modeler - Tyler Pohl, Felipe Lopez, Maria Alzaga
 
 
 
