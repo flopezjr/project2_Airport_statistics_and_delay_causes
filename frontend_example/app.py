@@ -91,7 +91,7 @@ def airport_plot():
     return json.dumps(fig2, cls=plotly.utils.PlotlyJSONEncoder)
 
 def year_carrier_plot():
-    data = load_data()
+    data = year_carrier_data()
     fig3 = px.scatter(
         data,
         x="arr_flights",
@@ -106,7 +106,7 @@ def year_carrier_plot():
             "carrier": "Carrier",
             "flight_year": "Flight Year",
             "airport": "Airport",
-            "arr_flights": "Num. of Delayed Flights",
+            "arr_flights": "Number of Delayed Flights",
             "arr_delay": "Delay Time (Hours)",
             "carrier_ct": "Air Carrier Delay",
         },
@@ -134,10 +134,8 @@ def total_delay_bar():
         },
         title="Total Delayed Flight by Airport (2013 - 2018)",
         text="arr_flights",
-)
+)   
     fig4["layout"].pop("updatemenus")
-
-
     return json.dumps(fig4, cls=plotly.utils.PlotlyJSONEncoder)
 
 
@@ -146,20 +144,20 @@ def home():
     fig1 = create_plot_express()
     return render_template("index.html", fig1=fig1)
 
-@app.route("/express")
+@app.route("/1")
 def express():
     fig2 = airport_plot()
     return render_template("express.html", fig2=fig2)
 
-@app.route("/year_carrier")
+@app.route("/2")
 def year_carrier():
     fig3 = year_carrier_plot()
-    return render_template("scatyear_carrierter.html", fig3=fig3)
+    return render_template("3.html", fig3=fig3)
 
-@app.route("/total_delay")
+@app.route("/3")
 def total_delay():
     fig4 = total_delay_bar()
-    return render_template("total_delay.html", fig4=fig4)
+    return render_template("4.html", fig4=fig4)
 
 
 
