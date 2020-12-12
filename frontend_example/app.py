@@ -142,6 +142,26 @@ def total_delay_bar():
     fig4["layout"].pop("updatemenus")
     return json.dumps(fig4, cls=plotly.utils.PlotlyJSONEncoder)
 
+def total_flight_bar():
+    data = airport_data()
+    fig6 = px.bar(
+    data,
+    x="airport",
+    y="arr_flights",
+    labels={
+        "carrier": "Carrier",
+        "flight_year": "Flight Year",
+        "airport": "Airport",
+        "arr_del15": "Num. of Delayed Flights",
+        "arr_delay": "Delay Time (Hours)",
+        "carrier_ct": "Air Carrier Delay",
+        "arr_flights": "Total Flights",
+    },
+    title="Total Flights by Airport (2013 - 2018)",
+    text="arr_flights",
+)
+    return json.dumps(fig6, cls=plotly.utils.PlotlyJSONEncoder)
+
 def carrier_plot():
     data = final_data()
     fig5 = px.bar(
@@ -185,6 +205,17 @@ def year_carrier():
 def total_delay():
     fig4 = total_delay_bar()
     return render_template("4.html", fig4=fig4)
+
+@app.route("/4")
+def new():
+    fig5 = carrier_plot()
+    return render_template("5.html", fig5=fig5)
+
+@app.route("/5")
+def new_2():
+    fig6 = total_flight_bar()
+    return render_template("6.html", fig6=fig6)
+
 
 
 
