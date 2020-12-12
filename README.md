@@ -2,20 +2,22 @@
 
 ![](https://github.com/Pg-git27/project2---Airport-statistics-and-delay-causes/blob/main/static/images/delayimage.jpg)
 
-Welcome to the proj2 wiki!
+Welcome to the proj2 wiki!<br>
+
+https://p2test-airline.herokuapp.com/
 
 ***
 **Team Members**
 
-•	Project Manager - Fellipe Lopez
+•	Project Manager - Felipe Lopez
 
-•	Lead Developer - Fellipe Lopez, Tyler Pohl
+•	Lead Developer - Felipe Lopez, Tyler Pohl
 
-•	Frontend Developer - Priyanka Garg 
+•	Frontend Developer - Priyanka Garg, Felipe Lopez
 
-•	Backend Developer - Maria Alzaga, Tyler Pohl, Fellipe Lopez and Kasmira Madina
+•	Backend Developer - Maria Alzaga, Tyler Pohl, Felipe Lopez and Kasmira Madina
 
-•	Data Engineer/Data Modeler - Fellipe Lopez, Maria Alzaga
+•	Data Engineer/Data Modeler - Felipe Lopez, Maria Alzaga
 
 
 
@@ -57,3 +59,5 @@ The dataset consists of information about 23 carriers and 373 airports from year
 
 
 UT Data Analysis & Visualization Bootcamp | December 2020
+
+Alternative repo used to deploy app : https://github.com/flopezjr/p2test
