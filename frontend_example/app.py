@@ -17,6 +17,10 @@ def airport_data():
     airport_grouped = pd.read_csv("db/airport_group.csv")
     return airport_grouped
 
+def year_carrier_data():
+    year_carrier = pd.read_csv("db/year_carrier.csv")
+    return year_carrier
+
 def create_plot_express():
     data = load_data()
     fig1 = px.scatter_geo(
@@ -86,6 +90,33 @@ def airport_plot():
 
     return json.dumps(fig2, cls=plotly.utils.PlotlyJSONEncoder)
 
+def year_carrier_plot():
+    data = load_data()
+    fig3 = px.scatter(
+        data,
+        x="arr_flights",
+        y="arr_delay",
+        animation_frame="flight_year",
+        animation_group="airport",
+        color="carrier",
+        size="carrier_ct",
+        hover_name="airport",
+        size_max=30,
+        labels={
+            "carrier": "Carrier",
+            "flight_year": "Flight Year",
+            "airport": "Airport",
+            "arr_flights": "Num. of Delayed Flights",
+            "arr_delay": "Delay Time (Hours)",
+            "carrier_ct": "Air Carrier Delay",
+        },
+        title="Time Delayed (Hours) by Carrier and Airport (2013 - 2017)",
+        height=700,
+        range_x=[-1000, 80000],
+        range_y=[-1000, 20000],
+    )
+
+    return json.dumps(fig3, cls=plotly.utils.PlotlyJSONEncoder)
 
 
 @app.route("/")
@@ -97,6 +128,12 @@ def home():
 def express():
     fig2 = airport_plot()
     return render_template("express.html", fig2=fig2)
+
+@app.route("/scatter")
+def scatter():
+    fig3 = year_carrier_plot()
+    return render_template("scatter.html", fig3=fig3)
+
 
 
 if __name__ == "__main__":
