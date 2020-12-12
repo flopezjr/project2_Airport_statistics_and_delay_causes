@@ -1,11 +1,11 @@
-airport_name,arr_flights
-"Atlanta, GA: Hartsfield-Jackson Atlanta International",1138927.0
-"Chicago, IL: Chicago O'Hare International",843208.0
-"Denver, CO: Denver International",685479.0
-"Dallas/Fort Worth, TX: Dallas/Fort Worth International",656511.0
-"Los Angeles, CA: Los Angeles International",648800.0
-"San Francisco, CA: San Francisco International",523011.0
-"Phoenix, AZ: Phoenix Sky Harbor International",487615.0
-"Las Vegas, NV: McCarran International",463568.0
-"Charlotte, NC: Charlotte Douglas International",457082.0
-"Houston, TX: George Bush Intercontinental/Houston",440098.0
+airport_name,arr_del15
+"Atlanta, GA: Hartsfield-Jackson Atlanta International",160323.0
+"Chicago, IL: Chicago O'Hare International",158552.0
+"Los Angeles, CA: Los Angeles International",141136.0
+"San Francisco, CA: San Francisco International",135676.0
+"Dallas/Fort Worth, TX: Dallas/Fort Worth International",116572.0
+"Denver, CO: Denver International",109218.0
+"Newark, NJ: Newark Liberty International",103016.0
+"Las Vegas, NV: McCarran International",84044.0
+"Phoenix, AZ: Phoenix Sky Harbor International",83535.0
+"Orlando, FL: Orlando International",77379.0
